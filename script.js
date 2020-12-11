@@ -1,4 +1,27 @@
 AOS.init({once: true});
+$(document).ready(function() {
+    if(!$('#myCanvas').tagcanvas({
+      textColour : '#a5a5a5',
+      outlineThickness : 0.5,
+      outlineColour : '#FE0853',
+      maxSpeed : 0.06,
+      freezeActive:true,
+      shuffleTags:true,
+      shape:'sphere',
+      zoom:1,
+      noSelect:true,
+      textFont: 'calibri',
+      pinchZoom:true,
+      freezeDecel:true,
+      fadeIn:1000,
+      initial: [0.3,-0.1],
+      depth : 1.1
+    },'tags')) {
+      // something went wrong, hide the canvas container
+      $('#myCanvasContainer').hide();
+    }
+  });
+
 
 const header = document.querySelector("header");
 
@@ -86,3 +109,27 @@ setTimeout(() => {
     const before = document.querySelector(".pure-circle");
     before.classList.add("mybefore");
 }, 4700);
+
+
+
+
+addEventListener("resize", (e) =>
+{
+    
+    setStatus()
+})
+
+
+function setStatus()
+{
+    const canvas = document.querySelector("canvas");
+    if (window.innerWidth > 500) {
+        canvas.height = 500;
+        canvas.width = 500;
+    }else if (window.innerWidth <= 500) {        
+        canvas.height = 320;
+        canvas.width = 320;
+    }
+}
+
+setStatus()

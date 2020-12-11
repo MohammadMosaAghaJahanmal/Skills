@@ -661,6 +661,20 @@ footer .right-side a:hover
     }
 }
 
+canvas
+{
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    z-index: 9999;
+}
+
+.canvas-top-margin
+{
+    margin-top: 150px;
+}
+
 /* ///////////////////////////////////////// */
 
 .justify-self-end
@@ -960,6 +974,15 @@ footer .right-side a:hover
     {
         font-size: 2rem;
     }
+    #myCanvasContainer
+    {
+        position: relative;
+        top: 200px;
+    }
+    .canvas-top-margin
+    {
+        margin-top: 400px;
+    }
 }
 
 @media all and (max-width: 500px)
@@ -1032,6 +1055,15 @@ footer .right-side a:hover
     {
         font-size: 20px !important;
     }
+    .canvas-top-margin
+    {
+        margin-top: 200px;
+    }
+    #myCanvasContainer
+    {
+        position: relative;
+        top: 0px;
+    }
 }
 
 @media all and (max-width: 414px)
@@ -1091,6 +1123,11 @@ footer .right-side a:hover
     {
         height: 60px;
     }
+    .canvas-top-margin
+    {
+        margin-top: 200px;
+    }
+
 }
 
 @media all and (max-width: 360px)
